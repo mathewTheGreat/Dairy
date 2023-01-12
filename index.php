@@ -1,3 +1,3 @@
 <?php 
 
-include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/routes.php';
+include_once 'routes.php';
