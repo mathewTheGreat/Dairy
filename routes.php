@@ -2,10 +2,9 @@
 
 require_once __DIR__.'/router.php';
 
-get('/', 'Dairy/index.php');
-get('/cattle', 'Dairy/api/getAllCattle.php');
-get('/cattle/$id', 'Dairy/api/getCattle.php');
-post('/cattle', 'Dairy/api/createCattle.php');
-post('/cattle/$id', 'Dairy/api/updateCattle.php');
-delete('/cattle/$id', 'Dairy/api/deleteCattle.php');
+get('/Dairy/cattle', 'Dairy_API/api/getAllCattle.php');
+get('/Dairy/cattle/$id', 'Dairy_API/api/getCattle.php');
+post('/Dairy/cattle', 'Dairy_API/api/createCattle.php');
+post('/Dairy/cattle/$id', 'Dairy_API/api/updateCattle.php');
+delete('/Dairy/cattle/$id', 'Dairy_API/api/deleteCattle.php');
 any('/404','views/404.php');

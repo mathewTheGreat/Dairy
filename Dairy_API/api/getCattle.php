@@ -2,8 +2,9 @@
  header("Access-Control-Allow-Origin: *");
  header("Content-Type: application/json; charset=UTF-8");
 
- include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/config/database.php';
- include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/class/cattle.php';
+ include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/config/database.php';
+ include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/class/cattle.php';
+    
  
  $database = new DairyDatabase();
  $pdo = $database->getPDO();

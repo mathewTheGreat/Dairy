@@ -2,8 +2,9 @@
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
 
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/config/database.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/class/cattle.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/config/database.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/class/cattle.php';
+    
     
     $database = new DairyDatabase();
     $pdo = $database->getPDO();
@@ -21,10 +22,10 @@
     $cattle->notes = $_POST["notes"];
     $cattle->from_group = $_POST["from_group"];
     $cattle->source_method = $_POST["source_method"];
-    $saved = $cattle->update($id);
+    $saved = $cattle->create();
     if ($saved) {
-        echo "Cattle was updated successfully";
+        echo "Cattle was saved successfully";
     } else {
-        echo "An error occurred while updating the cattle";
+        echo "An error occurred while saving the cattle";
     }
 ?>
