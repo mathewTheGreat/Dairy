@@ -1,7 +1,20 @@
 <?php
     class Cattle {
         // class properties and constructor
-
+        public $breed;
+        public $name;
+        public $tag_no;
+        public $gender;
+        public $weight;
+        public $birth_date;
+        public $arrival_date;
+        public $source;
+        public $mother_tag_no;
+        public $father_tag_no;
+        public $notes;
+        public $from_group;
+        public $source_method;
+        private $pdo;
         public function __construct($pdo) {
             $this->pdo = $pdo;
         }
