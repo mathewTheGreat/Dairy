@@ -7,7 +7,7 @@
     
     $database = new DairyDatabase();
     $pdo = $database->getPDO();
-    $event = new Event($pdo);
+    $event = new Events($pdo);
     $event->cattle_id = $_POST["cattle_id"];
     $event->event_type = $_POST["event_type"];
     $event->event_specification = $_POST["event_specification"];

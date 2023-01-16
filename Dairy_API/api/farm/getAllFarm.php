@@ -3,13 +3,14 @@
     header("Content-Type: application/json; charset=UTF-8");
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/config/database.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/api/masters/event_type/event_type.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/class/farm.php';
     
     $database = new DairyDatabase();
     $pdo = $database->getPDO();
-    
-    $eventType = new EventType($pdo);
-    $allEventTypes = $eventType->getAll();
+
+    $farm = new Farm($pdo);
+
+    $allFarms = $farm->getAll();
     http_response_code(200);
-    echo json_encode($allEventTypes);
+    echo json_encode($allFarms);
 ?>

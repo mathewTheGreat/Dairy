@@ -3,7 +3,7 @@
     header("Content-Type: application/json; charset=UTF-8");
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/config/database.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/api/masters/eventType/eventType.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/api/masters/event_type/event_type.php';
     
     $database = new DairyDatabase();
     $pdo = $database->getPDO();

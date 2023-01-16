@@ -13,14 +13,14 @@ class ExpenseType
 
     public function getAll()
     {
-        $stmt = $this->db->prepare("SELECT * FROM expense_type");
+        $stmt = $this->db->prepare("SELECT * FROM expense_types");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function find($id)
     {
-        $stmt = $this->db->prepare("SELECT * FROM expense_type WHERE id = ?");
+        $stmt = $this->db->prepare("SELECT * FROM expense_types WHERE id = ?");
         $stmt->execute([$id]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($row) {
@@ -36,21 +36,21 @@ class ExpenseType
 
     public function create()
     {
-        $stmt = $this->db->prepare("INSERT INTO expense_type (expense_name) VALUES (:expense_name)");
+        $stmt = $this->db->prepare("INSERT INTO expense_types (expense_name) VALUES (:expense_name)");
         $result = $stmt->execute(['expense_name' => $this->expense_name]);
         return $result;
     }
 
     public function update()
     {
-        $stmt = $this->db->prepare("UPDATE expense_type SET expense_name = :expense_name WHERE id = :id");
+        $stmt = $this->db->prepare("UPDATE expense_types SET expense_name = :expense_name WHERE id = :id");
         $result = $stmt->execute(['id' => $this->id, 'expense_name' => $this->expense_name]);
         return $result;
     }
 
     public function delete()
     {
-        $stmt = $this->db->prepare("DELETE FROM expense_type WHERE id = :id");
+        $stmt = $this->db->prepare("DELETE FROM expense_types WHERE id = :id");
         $result = $stmt->execute(['id' => $this->id]);
         return $result;
     }

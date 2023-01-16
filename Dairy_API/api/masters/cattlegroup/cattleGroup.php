@@ -51,7 +51,7 @@ class CattleGroup
             $this->employee_id = $row['employee_id'];
             $this->farm_id = $row['farm_id'];
             $this->health_status = $row['health_status'];
-            $this->vaccination_date = $row['vaccination_date'];
+            $this->vaccination_date = $row['vaccination_dates'];
             $this->medication = $row['medication'];
             $this->milk_production = $row['milk_production'];
             $this->milk_quality = $row['milk_quality'];
@@ -70,7 +70,7 @@ class CattleGroup
 
     public function update()
     {
-        $stmt = $this->db->prepare("UPDATE cattle_group SET name = ?, description = ?, cattle_count = ?, type = ?, feeding_schedule = ?, comments = ?, movement = ?, movement_date = ?, movement_location = ?, employee_id = ?, farm_id = ?, health_status = ?, vaccination_date = ?, medication = ?, milk_production = ?, milk_quality = ? WHERE id = ?");
+        $stmt = $this->db->prepare("UPDATE cattle_group SET name = ?, description = ?, cattle_count = ?, type = ?, feeding_schedule = ?, comments = ?, movement = ?, movement_date = ?, movement_location = ?, employee_id = ?, farm_id = ?, health_status = ?, vaccination_dates = ?, medication = ?, milk_production = ?, milk_quality = ? WHERE id = ?");
         $stmt->execute([$this->name, $this->description, $this->cattle_count, $this->type, $this->feeding_schedule, $this->comments, $this->movement, $this->movement_date, $this->movement_location, $this->employee_id, $this->farm_id, $this->health_status, $this->vaccination_date, $this->medication, $this->milk_production, $this->milk_quality, $this->id]);
         return true;
     }

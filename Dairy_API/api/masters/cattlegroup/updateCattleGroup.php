@@ -20,14 +20,14 @@
     $cattlegroup->employee_id = $_POST["employee_id"];
     $cattlegroup->farm_id = $_POST["farm_id"];
     $cattlegroup->health_status = $_POST["health_status"];
-    $cattlegroup->vaccination_date = $_POST["vaccination_date"];
+    $cattlegroup->vaccination_date = $_POST["vaccination_dates"];
     $cattlegroup->medication = $_POST["medication"];
     $cattlegroup->milk_production = $_POST["milk_production"];
     $cattlegroup->milk_quality = $_POST["milk_quality"];
     $saved = $cattlegroup->update();
     if ($saved) {
         http_response_code(200);
-        echo json_encode($breed);
+        echo json_encode( $cattlegroup);
     } else {
         http_response_code(400);
         echo "An error occurred while updating the breed";

@@ -8,13 +8,13 @@
     $database = new DairyDatabase();
     $pdo = $database->getPDO();
 
-    $event = new Event($pdo);
+    $event = new Events($pdo);
     $event->cattle_id = $_POST["cattle_id"];
     $event->event_type = $_POST["event_type"];
     $event->event_specification = $_POST["event_specification"];
     $event->notes = $_POST["notes"];
     $event->date = $_POST["date"];
-    $saved = $event->create();
+    $saved = $event->update($id);
     if ($saved) {
         echo "Event was saved successfully";
     } else {

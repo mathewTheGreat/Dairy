@@ -8,7 +8,9 @@
     $database = new DairyDatabase();
     $pdo = $database->getPDO();
 
-    $allEvents = Event::getAll($pdo);
+    $event = new Events($pdo);
+
+    $allEvents = $event->getAll();
     http_response_code(200);
     echo json_encode($allEvents);
 ?>
