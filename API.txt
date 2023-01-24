@@ -1,0 +1,337 @@
+--------MASTER DETAILS--------
+EVENT TYPE:
+ADD(POST) - https://wachi.co.ke/Dairy/eventtype 
+{
+    "event_name" : "Vaccination"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/eventtype/1 
+{
+    "event_name" : "Milking"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/eventtype/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/eventtype/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/eventtype/
+
+CATTLE GROUP:
+ADD(POST) - https://wachi.co.ke/Dairy/cattlegroup 
+{
+     "name" : "Calves",
+     "description" : "young cows",
+     "cattle_count" : "56",
+     "type" : "lactating",
+     "feeding_schedule" : "2023-01-01 00:00:00",
+     "comments" : "they area small",
+     "movement" : "none"
+     "movement_date" : "null"
+     "movement_location" : "null",
+     "employee_id" : "1",
+     "farm_id" : "null",
+     "health_status" : "null",
+     "vaccination_dates" : "2023-01-01 00:00:00",
+     "medication" : "null",
+     "milk_production" : "null"
+     "milk_quality" : "null"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/cattlegroup/1 
+{
+    "name" : "Calves",
+     "description" : "young cows",
+     "cattle_count" : "56",
+     "type" : "lactating",
+     "feeding_schedule" : "2023-01-01 00:00:00",
+     "comments" : "they area small",
+     "movement" : "none"
+     "movement_date" : "null"
+     "movement_location" : "null",
+     "employee_id" : "1",
+     "farm_id" : "null",
+     "health_status" : "null",
+     "vaccination_dates" : "2023-01-01 00:00:00",
+     "medication" : "null",
+     "milk_production" : "null"
+     "milk_quality" : "null"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/cattlegroup/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/cattlegroup/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/cattlegroup/
+
+EXPENSE TYPE:
+ADD(POST) - https://wachi.co.ke/Dairy/expensetype 
+{
+    "expense_name" : "Vaccination"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/expensetype/1 
+{
+    "expense_name" : "Milking"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/expensetype/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/expensetype/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/expensetype/
+
+INCOME TYPE:
+ADD(POST) - https://wachi.co.ke/Dairy/incometype 
+{
+    "income_name" : "Vaccination"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/incometype/1 
+{
+    "income_name" : "Milking"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/incometype/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/incometype/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/incometype/
+
+BREED:
+ADD(POST) - https://wachi.co.ke/Dairy/breed 
+{
+    "name" : "Freshian",
+    "description" : "high milk production",
+    "image" : "null",
+    "milk_production" : "null",
+    "meat_production" : "null",
+    "adaptability" : "null",
+    "comments" : "good for milk"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/breed/1 
+{
+    "name" : "Freshian",
+    "description" : "high milk production",
+    "image" : "null",
+    "milk_production" : "null",
+    "meat_production" : "null",
+    "adaptability" : "null",
+    "comments" : "good for milk"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/breed/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/breed/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/breed/
+
+
+
+--------MASTER DETAILS--------
+
+--------ENTITIES--------
+CATTLE:
+ADD(POST) - https://wachi.co.ke/Dairy/cattle 
+{
+    "breed" : "1",
+    "name" : "sample cow name",
+    "tag_no" : "12345",
+    "gender": "1",
+    "weight" : "300.78"
+    "birth_date" : "2023-01-01",
+    "arrival_date" : "2023-01-01",
+    "source" : "Mathew farms",
+    "mother_tag_no" : "123",
+    "father_tag_no" : "1234",
+    "notes" : "veri big cow",
+    "from_group" : "1",
+    "source_method" : "bought"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/cattle/1 
+{
+    "breed" : "1",
+    "name" : "sample cow name",
+    "tag_no" : "12345",
+    "gender": "1",
+    "weight" : "300.78"
+    "birth_date" : "2023-01-01",
+    "arrival_date" : "2023-01-01",
+    "source" : "Mathew farms",
+    "mother_tag_no" : "123",
+    "father_tag_no" : "1234",
+    "notes" : "veri big cow",
+    "from_group" : "1",
+    "source_method" : "bought"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/cattle/1 
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/cattle/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/cattle/
+
+
+EVENT:
+ADD(POST) - https://wachi.co.ke/Dairy/event 
+{
+    "cattle_id" : "1",
+    "event_type" : "1",
+    "event_specification" : "milking",
+    "notes" : "milking the cow",
+    "date" : "2023-01-01"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/event/1 
+{
+    "cattle_id" : "1",
+    "event_type" : "1",
+    "event_specification" : "milking",
+    "notes" : "milking the cow",
+    "date" : "2023-01-01"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/event/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/event/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/cattle/
+
+EXPENSE:
+ADD(POST) - https://wachi.co.ke/Dairy/expense 
+{
+    "date" : "2023-01-01",
+    "type_id" : "1",
+    "receipt_no" : "123",
+    "expense_specification" : "washing cows",
+    "value" : "3000",
+    "notes" : "washed the cows"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/expense/1 
+{
+    "date" : "2023-01-01",
+    "type_id" : "1",
+    "receipt_no" : "123",
+    "expense_specification" : "washing cows",
+    "value" : "3000",
+    "notes" : "washed the cows"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/expense/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/expense/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/expense/
+
+INCOME:
+ADD(POST) - https://wachi.co.ke/Dairy/income 
+{
+    "date" : "2023-01-01",
+    "type_id" : "1",
+    "receipt_no" : "123",
+    "expense_specification" : "sold manure",
+    "value" : "3000",
+    "notes" : "washed 15kgs of manure"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/income/1 
+{
+    "date" : "2023-01-01",
+    "type_id" : "1",
+    "receipt_no" : "123",
+    "expense_specification" : "sold manure",
+    "value" : "3000",
+    "notes" : "washed 15kgs of manure"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/income/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/income/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/income/
+
+
+FARM:
+ADD(POST) - https://wachi.co.ke/Dairy/farm 
+{
+    "farm_name" : "Mathew farm",
+    "location" : " Ngong",
+    "size" : "107",
+    "contact_person" : "Mathew",
+    "contact_number" : "0704448011",
+    "email" : "momanyimathew@gmail.com"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/farm/1 
+{
+    "farm_name" : "Mathew farm",
+    "location" : " Ngong",
+    "size" : "107",
+    "contact_person" : "Mathew",
+    "contact_number" : "0704448011",
+    "email" : "momanyimathew@gmail.com"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/farm/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/farm/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/farm/
+
+MILK PRODUCTION:
+ADD(POST) - https://wachi.co.ke/Dairy/milkproduction 
+{
+    "cattle_ID" : "1",
+    "date" : "2023-01-01",
+    "morning_quantity" : "23.89",
+    "afternoon_quantity" : "23.00",
+    "evening_quantity" : "23.00",
+    "quality" : "22",
+    "milk_consumed_by_calf" : "10.00"
+
+}
+
+EDIT(POST) - https://wachi.co.ke/Dairy/milkproduction/1 
+{
+    "cattle_ID" : "1",
+    "date" : "2023-01-01",
+    "morning_quantity" : "23.89",
+    "afternoon_quantity" : "23.00",
+    "evening_quantity" : "23.00",
+    "quality" : "22",
+    "milk_consumed_by_calf" : "10.00"
+
+}
+
+DELETE - https://wachi.co.ke/Dairy/milkproduction/1
+
+SEARCH(GET) - https://wachi.co.ke/Dairy/milkproduction/1 
+
+LIST(GET) - https://wachi.co.ke/Dairy/milkproduction/
+
+--------ENTITIES--------
+
+
+

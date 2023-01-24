@@ -42,7 +42,7 @@ class CattleGroup
             $this->name = $row['name'];
             $this->description = $row['description'];
             $this->cattle_count = $row['cattle_count'];
-            $this->type;
+            $this->type = $row['type'];
             $this->feeding_schedule = $row['feeding_schedule'];
             $this->comments = $row['comments'];
             $this->movement = $row['movement'];

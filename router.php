@@ -1,10 +1,61 @@
 <?php
 session_start();
-function get($route, $path_to_include){
-  if( $_SERVER['REQUEST_METHOD'] == 'GET' ){ route($route, $path_to_include); }  
+include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/class/usermanager.php';
+
+include_once $_SERVER['DOCUMENT_ROOT'].'/Dairy/Dairy_API/config/database.php';
+
+$database = new DairyDatabase();
+$pdo = $database->getPDO();
+
+
+$userManager = new UserManager($pdo);
+
+function authenticate($token, $tokenSecret) {
+  global $userManager;
+  $userId = $userManager->authenticate($token, $tokenSecret);
+  if ($userId === false) {
+      header('HTTP/1.0 401 Unauthorized');
+      echo 'Unauthorized';
+      exit();
+  } else {
+      return $userId;
+  }
 }
-function post($route, $path_to_include){
-  if( $_SERVER['REQUEST_METHOD'] == 'POST' ){ route($route, $path_to_include); }    
+function get($route, $path_to_include, $tokenSecret){
+  if( $_SERVER['REQUEST_METHOD'] == 'GET' ){ 
+    // Check for valid token in the Authorization header
+    $headers = getallheaders();
+    if (!isset($headers['Authorization'])) {
+        header('HTTP/1.0 401 Unauthorized');
+        echo 'Unauthorized';
+        exit();
+    }
+    $token = $headers['Authorization'];
+
+    // Authenticate user
+    $userId = authenticate($token, $tokenSecret);
+    route($route, $path_to_include); 
+  }  
+}
+
+function post($route, $path_to_include, $tokenSecret){
+  if( $_SERVER['REQUEST_METHOD'] == 'POST' ){ 
+    // Check for valid token in the Authorization header only if the route is not register or login
+    
+    if ($route !== '/Dairy/registration' && $route !== '/Dairy/login') {
+     
+        $headers = getallheaders();
+        if (!isset($headers['Authorization'])) {
+            header('HTTP/1.0 401 Unauthorized');
+            echo 'Unauthorized';
+            exit();
+        }
+        $token = $headers['Authorization'];
+        // Authenticate user
+        $userId = authenticate($token, $tokenSecret);
+    }
+    route($route, $path_to_include); 
+  }    
 }
 function put($route, $path_to_include){
   if( $_SERVER['REQUEST_METHOD'] == 'PUT' ){ route($route, $path_to_include); }    
