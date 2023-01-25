@@ -30,9 +30,16 @@
                 'exp' => time() + $tokenExpiration
             ];
             $token = JWT::encode($payload, $tokenSecret, 'HS256');
+
+            $timezone = new DateTimeZone('Africa/Nairobi');
+            $date = new DateTime('now', $timezone);
+            $offset = '+2 hours';
+            $date->modify($offset);
+            $timestamp = $date->getTimestamp();
+
             $d=strtotime("now");
-            $issuedAt =  date("Y-m-d h:i:sa", $d);
-            $expires = date("Y-m-d h:i:sa", $d+$tokenExpiration);
+            $issuedAt =  date("Y-m-d h:i:sa", $timestamp);
+            $expires = date("Y-m-d h:i:sa", $timestamp+$tokenExpiration);
             return array('token' => $token, 'user_id' => $user['id'], 'user_name' => $user['name'], 'expiration' => time() + $tokenExpiration, 'issuedAt' => $issuedAt, 'expires' => $expires);
         }
         public function register($username, $password, $email) {
