@@ -66,7 +66,10 @@ function patch($route, $path_to_include){
 function delete($route, $path_to_include){
   if( $_SERVER['REQUEST_METHOD'] == 'DELETE' ){ route($route, $path_to_include); }    
 }
-function any($route, $path_to_include){ route($route, $path_to_include); }
+function any($route, $path_to_include)
+{
+  route($route, $path_to_include);
+}
 function route($route, $path_to_include){
   $callback = $path_to_include;
   if( !is_callable($callback) ){

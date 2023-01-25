@@ -2,11 +2,13 @@
 
 require_once __DIR__.'/router.php';
 
+//user routes
+post('/Dairy/login', 'Dairy_API/api/usermanager/login.php', 'PUT_YOUR_SECRET_KEY_HERE');
+post('/Dairy/registration', 'Dairy_API/api/usermanager/registration.php', 'PUT_YOUR_SECRET_KEY_HERE');
+
 //event type routes
 get('/Dairy/eventtype', 'Dairy_API/api/masters/event_type/getAllEventTypes.php', 'PUT_YOUR_SECRET_KEY_HERE');
 get('/Dairy/eventtype/$id', 'Dairy_API/api/masters/event_type/getEventType.php', 'PUT_YOUR_SECRET_KEY_HERE');
-post('/Dairy/login', 'Dairy_API/api/usermanager/login.php', 'PUT_YOUR_SECRET_KEY_HERE');
-post('/Dairy/registration', 'Dairy_API/api/usermanager/registration.php', 'PUT_YOUR_SECRET_KEY_HERE');
 post('/Dairy/eventtype/$id', 'Dairy_API/api/masters/event_type/updateEventType.php', 'PUT_YOUR_SECRET_KEY_HERE');
 post('/Dairy/eventtype', 'Dairy_API/api/masters/event_type/createEventType.php', 'PUT_YOUR_SECRET_KEY_HERE');
 delete('/Dairy/eventtype/$id', 'Dairy_API/api/masters/event_type/deleteEventType.php');
